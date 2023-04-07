@@ -3,9 +3,9 @@ const Cart = require('./cart')
 
 module.exports =  class Product {
 
-    constructor(tittle, description, price, quantity, image) {
+    constructor(title, description, price, quantity, image) {
         
-        this.tittle = tittle;
+        this.title = title;
         this.description = description;
         this.price = price;
         this.quantity = quantity;
@@ -14,7 +14,7 @@ module.exports =  class Product {
 
     async save() {
         const val = await db.execute("INSERT INTO products (title, price, description, image_url) VALUES (?,?,?,?)",
-        [this.tittle,this.price,this.description,this.image]
+        [this.title,this.price,this.description,this.image]
         )
         return val
     }
